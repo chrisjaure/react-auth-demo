@@ -1,4 +1,7 @@
 {
+	"extends": "defaults/configurations/eslint",
+	"parser": "babel-eslint",
+	"plugins": ["react"],
 	"ecmaFeatures": {
 		"jsx": true,
 		"modules": true,

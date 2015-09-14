@@ -5,7 +5,7 @@ import Loader from '../src/components/loader';
 
 function setup(props) {
     let el = React.createElement(Loader, props);
-    let tree = ReactDOM.render(el, document.getElementById('render'));
+    ReactDOM.render(el, document.getElementById('render'));
     return document.getElementById('render').querySelector('.loader');
 }
 

@@ -1,5 +1,4 @@
-import React, { PropTypes } from 'react';
-import {Link} from 'react-router';
+import React from 'react';
 import DocumentTitle from 'react-document-title';
 import Content from './content';
 

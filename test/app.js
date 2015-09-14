@@ -2,7 +2,7 @@ import test from 'tape';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {appBootstrap} from '../src/components/app';
-import {renderIntoDocument, findRenderedDOMComponentWithTag, Simulate} from 'react-addons-test-utils';
+import {renderIntoDocument, Simulate} from 'react-addons-test-utils';
 
 function setup(mock, props = {}, children = []) {
     let App = appBootstrap(mock);
@@ -18,7 +18,7 @@ test('get current user on startup', (t) => {
             t.pass('called get user');
         }
     };
-    let {domNode} = setup(authUserMock);
+    setup(authUserMock);
 });
 
 test('listen for user changes', (t) => {
@@ -26,7 +26,7 @@ test('listen for user changes', (t) => {
     let authUserMock = {
         getUser: () => {}
     };
-    let {domNode} = setup(authUserMock);
+    setup(authUserMock);
     t.ok(authUserMock.onChange, 'set onChange fn');
 });
 

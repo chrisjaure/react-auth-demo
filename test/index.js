@@ -1,3 +1,4 @@
+/* global global, require */
 import jsdom from 'jsdom';
 global.document = jsdom.jsdom('<!doctype html><html><meta charset=utf-8><title>test doc</title><div id="render"></div>');
 global.window = document.defaultView;

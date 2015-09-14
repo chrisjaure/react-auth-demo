@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import { Router, Route, IndexRoute } from 'react-router';
 import {appBootstrap} from './app';
 import Login from './login';

@@ -2,7 +2,7 @@ import test from 'tape';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Login from '../src/components/login';
-import {renderIntoDocument, findRenderedDOMComponentWithTag, Simulate} from 'react-addons-test-utils';
+import {renderIntoDocument, Simulate} from 'react-addons-test-utils';
 
 function setup(props) {
     let el = React.createElement(Login, props);

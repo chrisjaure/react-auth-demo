@@ -54,7 +54,7 @@ test('clear store when logged out', (t) => {
     const userAuth = UserAuth(storeMock);
     t.plan(2);
     userAuth.authenticateUser = () => Promise.resolve();
-    userAuth.login(validCredentials).then((user) => {
+    userAuth.login(validCredentials).then(() => {
         userAuth.onChange = () => {
             t.pass('event fired');
         }
@@ -69,7 +69,7 @@ test('fetch user', (t) => {
     t.plan(2);
     t.notOk(userAuth.getUser(), 'empty user');
     userAuth.authenticateUser = () => Promise.resolve();
-    userAuth.login(validCredentials).then((user) => {
+    userAuth.login(validCredentials).then(() => {
         t.deepEqual(userAuth.getUser(), validCredentials, 'correct user');
     });
 });

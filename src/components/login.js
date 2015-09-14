@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import DocumentTitle from 'react-document-title';
-import Loader from './loader';
 import Content from './content';
 import ErrorText from './error';
 import FormLabel from './form-label';
