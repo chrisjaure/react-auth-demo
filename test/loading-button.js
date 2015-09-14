@@ -10,8 +10,20 @@ function setup(props) {
     return ReactDOM.findDOMNode(tree);
 }
 
-// test('handle hover styles', (t) => {
-//     let domNode = setup({ loading: false });
-//     let button = domNode.querySelector('button');
-//     console.log(button.styles);
-// });
+test('handle hover styles', (t) => {
+    t.plan(2);
+    let domNode = setup({ loading: false });
+    let bgColor = domNode.style.backgroundColor;
+    Simulate.mouseEnter(domNode);
+    t.notEqual(bgColor, domNode.style.backgroundColor, 'background changed');
+    Simulate.mouseLeave(domNode);
+    t.equal(bgColor, domNode.style.backgroundColor, 'background changed back');
+});
+
+test('add loading styles', (t) => {
+    t.plan(1);
+    let domNode = setup({ loading: false });
+    let styles = domNode.style;
+    let domNodeLoading = setup({ loading: true });
+    t.notDeepEqual(styles, domNodeLoading, 'styles changed');
+});

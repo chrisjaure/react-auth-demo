@@ -54,7 +54,7 @@ class App extends React.Component {
                 {this.renderChildren()}
                 <footer style={bannerStyles}>
                     {this.state.currentUser ?
-                        <a href="" style={logoutStyles} onClick={this.handleLogout.bind(this)}>Logout</a> : null}
+                        <a href="" className="logout" style={logoutStyles} onClick={this.handleLogout.bind(this)}>Logout</a> : null}
                 </footer>
             </div>
         );
