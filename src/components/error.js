@@ -8,5 +8,5 @@ const styles = {
 };
 
 export default ({children}) => (
-    <div className="error" ref="error" style={styles}>{children}</div>
+    <div className="error" style={styles}>{children}</div>
 )

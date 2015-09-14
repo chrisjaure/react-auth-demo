@@ -23,7 +23,8 @@ const loaderStyle = {
     position: 'absolute',
     right: '1em',
     top: '50%',
-    transform: 'translateY(-50%)'
+    transform: 'translateY(-50%)',
+    WebkitTransform: 'translateY(-50%)'
 };
 
 const loaderLoadingStyle = {
