@@ -45,7 +45,7 @@ test('fire change event', (t) => {
     userAuth.authenticateUser = () => Promise.resolve();
     userAuth.onChange = () => {
         t.pass('event fired');
-    }
+    };
     userAuth.login(validCredentials);
 });
 
@@ -57,7 +57,7 @@ test('clear store when logged out', (t) => {
     userAuth.login(validCredentials).then(() => {
         userAuth.onChange = () => {
             t.pass('event fired');
-        }
+        };
         userAuth.logout();
         t.notOk(storeMock.user, 'empty store');
     });

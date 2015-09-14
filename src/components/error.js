@@ -9,4 +9,4 @@ const styles = {
 
 export default ({children}) => (
     <div className="error" style={styles}>{children}</div>
-)
+);

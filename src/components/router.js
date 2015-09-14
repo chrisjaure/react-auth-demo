@@ -4,7 +4,7 @@ import {appBootstrap} from './app';
 import Login from './login';
 import Greeting from './greeting';
 import createUserAuth from '../api/user-auth';
-const userAuth = createUserAuth(sessionStorage)
+const userAuth = createUserAuth(sessionStorage);
 const App = appBootstrap(userAuth);
 
 export default (props) => (

@@ -20,7 +20,7 @@ const styles = (color = '#38e') => {
 
 export default ({loading, color}) => {
     if (loading) {
-        return <div className="loader" style={styles(color)} />
+        return <div className="loader" style={styles(color)} />;
     }
     return <span />;
-}
+};

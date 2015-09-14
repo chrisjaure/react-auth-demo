@@ -12,6 +12,7 @@
     "lint": "eslint src test",
     "prebuild": "rimraf dist && mkdirp dist",
     "predev": "rimraf dev && mkdirp dev",
+    "postbuild": "npm test && npm run lint --silent",
     "serve:dist": "http-server dist",
     "serve:dev": "http-server dev",
     "start": "npm run build && npm run serve:dist",

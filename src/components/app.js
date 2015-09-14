@@ -49,7 +49,7 @@ class App extends React.Component {
         return (
             <div style={styles}>
                 <header style={bannerStyles}>
-                    <h1>Single Page App</h1>
+                    <h1>React Auth Demo</h1>
                 </header>
                 {this.renderChildren()}
                 <footer style={bannerStyles}>

@@ -24,11 +24,11 @@ test('submit user input', (t) => {
     let login = function (user) {
         t.deepEqual(user, {username: 'test', password: 'test'}, 'correct object');
         return Promise.resolve();
-    }
+    };
     let domNode = setup({login});
     let inputs = domNode.querySelectorAll('input');
     inputs[0].value = 'test';
-    inputs[1].value = 'test'
+    inputs[1].value = 'test';
     Simulate.change(inputs[0]);
     Simulate.change(inputs[1]);
     Simulate.submit(domNode.querySelector('form'));

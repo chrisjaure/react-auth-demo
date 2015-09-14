@@ -7,4 +7,4 @@ const styles = {
 
 export default ({children}) => (
     <label style={styles}>{children}</label>
-)
+);

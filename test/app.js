@@ -53,7 +53,7 @@ test('call user auth and go to login on logout', (t) => {
         pushState: (path, query) => {
             t.equal(query, '/login', 'pushState called');
         }
-    }
+    };
     let {domNode} = setup(authUserMock, {history});
     authUserMock.onChange({ username: 'test' });
     let logout = domNode.querySelector('.logout');
@@ -73,7 +73,7 @@ test('redirect to home page on login', (t) => {
         replaceState: (path, query) => {
             t.equal(query, '/', 'replaceState called');
         }
-    }
+    };
     let {component} = setup(authUserMock, {history});
     component.login();
 });

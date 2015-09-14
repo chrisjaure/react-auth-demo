@@ -19,7 +19,7 @@ export default class Login extends React.Component {
             },
             error: null,
             loading: false
-        }
+        };
     }
     handleSubmit (event) {
         event.preventDefault();
@@ -36,7 +36,7 @@ export default class Login extends React.Component {
             let userInput = this.state.userInput;
             userInput[type] = event.target.value;
             this.setState({userInput});
-        }
+        };
     }
     render () {
         return (
