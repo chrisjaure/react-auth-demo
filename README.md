@@ -1,5 +1,9 @@
 # React Auth Demo
 
+## Demo
+
+[http://chrisjaure.github.io/react-auth-demo/](http://chrisjaure.github.io/react-auth-demo/)
+
 ## Usage
 
 ```
@@ -8,7 +12,7 @@ cd react-auth-demo
 npm install
 npm start
 ```
-Open your browser to http://localhost:8080
+Open your browser to [http://localhost:8080](http://localhost:8080)
 
 ## Development
 
