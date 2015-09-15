@@ -8,7 +8,7 @@ export default function(store) {
                 setTimeout(function () {
                     // simulate network request
                     if (username === hardCodedUsername && password === hardCodedPassword) {
-                        resolve();
+                        resolve({username, token: 'randomtoken'});
                     }
                     else {
                         reject(new Error('Invalid username or password :('));
@@ -23,11 +23,10 @@ export default function(store) {
 
         login: function(user) {
             return this.authenticateUser(user)
-                .then(() => {
-                    delete user.password;
-                    store.user = JSON.stringify(user);
-                    this.onChange(user);
-                    return user;
+                .then((authenticatedUser) => {
+                    store.user = JSON.stringify(authenticatedUser);
+                    this.onChange(authenticatedUser);
+                    return authenticatedUser;
                 });
         },
 

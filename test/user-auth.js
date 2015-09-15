@@ -6,6 +6,11 @@ const validCredentials = {
     password: 'test'
 };
 
+const userResponse = {
+    username: 'test',
+    token: 'randomtoken'
+};
+
 test('authenticate correct credentials', (t) => {
     let storeMock = {};
     const userAuth = UserAuth(storeMock);
@@ -31,10 +36,10 @@ test('save user in store when logged in', (t) => {
     let storeMock = {};
     const userAuth = UserAuth(storeMock);
     t.plan(2);
-    userAuth.authenticateUser = () => Promise.resolve();
+    userAuth.authenticateUser = () => Promise.resolve(userResponse);
     userAuth.login(validCredentials).then((user) => {
-        t.equal(validCredentials, user, 'resolved user is correct');
-        t.equal(storeMock.user, JSON.stringify(validCredentials), 'stored user is correct');
+        t.deepEqual(user, userResponse, 'resolved user is correct');
+        t.equal(storeMock.user, JSON.stringify(userResponse), 'stored user is correct');
     });
 });
 
@@ -42,7 +47,7 @@ test('fire change event', (t) => {
     let storeMock = {};
     const userAuth = UserAuth(storeMock);
     t.plan(1);
-    userAuth.authenticateUser = () => Promise.resolve();
+    userAuth.authenticateUser = () => Promise.resolve(userResponse);
     userAuth.onChange = () => {
         t.pass('event fired');
     };
@@ -53,7 +58,7 @@ test('clear store when logged out', (t) => {
     let storeMock = {};
     const userAuth = UserAuth(storeMock);
     t.plan(2);
-    userAuth.authenticateUser = () => Promise.resolve();
+    userAuth.authenticateUser = () => Promise.resolve(userResponse);
     userAuth.login(validCredentials).then(() => {
         userAuth.onChange = () => {
             t.pass('event fired');
@@ -68,9 +73,9 @@ test('fetch user', (t) => {
     const userAuth = UserAuth(storeMock);
     t.plan(2);
     t.notOk(userAuth.getUser(), 'empty user');
-    userAuth.authenticateUser = () => Promise.resolve();
+    userAuth.authenticateUser = () => Promise.resolve(userResponse);
     userAuth.login(validCredentials).then(() => {
-        t.deepEqual(userAuth.getUser(), validCredentials, 'correct user');
+        t.deepEqual(userAuth.getUser(), userResponse, 'correct user');
     });
 });
 

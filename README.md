@@ -4,6 +4,11 @@
 
 [http://chrisjaure.github.io/react-auth-demo/](http://chrisjaure.github.io/react-auth-demo/)
 
+Login with:
+
+- `username` **test**
+- `password` **test**
+
 ## Usage
 
 ```
