@@ -4,5 +4,5 @@ import Router from './components/router';
 
 ReactDOM.render(
     React.createElement(Router),
-    document.getElementById('app')
+    document.getElementById('root')
 );
