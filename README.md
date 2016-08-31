@@ -17,16 +17,8 @@ cd react-auth-demo
 npm install
 npm start
 ```
-Open your browser to [http://localhost:8080](http://localhost:8080)
-
-## Development
-
-```
-npm run dev
-```
-This will rebuild on changes.
+Open your browser to [http://localhost:3000](http://localhost:3000)
 
 ## Test
 
-- `npm test` - run unit tests
-- `npm run lint --silent` - run linter checks
+`npm test` - run unit tests
