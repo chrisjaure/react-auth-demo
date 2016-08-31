@@ -3,9 +3,12 @@
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://chrisjaure.github.io/react-auth-demo",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prepublish:pages": "npm run build",
+    "publish:pages": "gh-pages --dist build",
     "test": "babel-node --presets babel-preset-latest,babel-preset-react --plugins babel-plugin-transform-class-properties,babel-plugin-transform-object-rest-spread,babel-plugin-transform-regenerator,babel-plugin-transform-runtime test/index.js"
   },
   "author": "",
