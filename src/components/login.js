@@ -14,8 +14,8 @@ export default class Login extends React.Component {
         super(...args);
         this.state = {
             userInput: {
-                username: null,
-                password: null
+                username: '',
+                password: ''
             },
             error: null,
             loading: false
